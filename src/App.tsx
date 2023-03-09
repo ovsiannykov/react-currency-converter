@@ -1,8 +1,11 @@
+import { CurrenciesProvider } from "./entities/currency/currency-provider";
+import HomePage from "./pages/home-page/home-page";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <CurrenciesProvider>
+      <HomePage />
+    </CurrenciesProvider>
   );
 }
 
