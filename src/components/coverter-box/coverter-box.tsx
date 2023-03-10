@@ -8,7 +8,7 @@ function ConverterBox() {
   const [seccundaryValue, setSeccundaryValue] = useState(1);
 
   const [initialCurrency, setInitialCurrency] = useState("Українська гривня");
-  const [seccundaryCurrency, setSeccundaryCurrency] = useState("");
+  const [seccundaryCurrency, setSeccundaryCurrency] = useState("Доллар США");
 
   console.log(initialValue);
 

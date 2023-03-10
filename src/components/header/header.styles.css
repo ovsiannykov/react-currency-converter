@@ -1,0 +1,46 @@
+header {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  padding: 12px 50px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.2s;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  transition: transform 0.2s;
+}
+
+.hot-currencies {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.currecy-item {
+  color: white;
+  font-weight: 900;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.currency-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.uah-title {
+  font-weight: 500;
+  font-size: 12px;
+}
