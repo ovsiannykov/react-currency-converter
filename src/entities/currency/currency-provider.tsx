@@ -1,4 +1,5 @@
 import axios from "axios";
+import { format } from "date-fns";
 import React, { useContext } from "react";
 import { CurrenciesContext, Props, State } from "./types";
 
@@ -14,7 +15,7 @@ export class CurrenciesProvider extends React.Component<Props, State> {
     super(props);
     this.state = {
       context: {
-        currencies: null,
+        currencies: [],
         getCurrencies: this.getCurrencies,
         isLoading: false,
       },
@@ -29,9 +30,21 @@ export class CurrenciesProvider extends React.Component<Props, State> {
     try {
       const res = await axios.get(BASE_URL);
 
+      const cuurenciesArr = res.data;
+
+      const UAH = {
+        r030: 999,
+        txt: "Українська гривня",
+        rate: 1,
+        cc: "UAH",
+        exchangedate: format(new Date(), "dd.MM.yyyy"),
+      };
+
+      await cuurenciesArr.unshift(UAH);
+
       if (res.status === 200) {
         this.setState((prev) => ({
-          context: { ...prev.context, currencies: res.data },
+          context: { ...prev.context, currencies: cuurenciesArr },
         }));
       }
     } catch (error) {

@@ -9,7 +9,7 @@ export type Valute = {
 };
 
 export type CurrenciesContext = {
-  currencies: Valute[] | null;
+  currencies: Valute[];
   getCurrencies: InstanceType<typeof CurrenciesProvider>["getCurrencies"];
   isLoading: boolean;
 };

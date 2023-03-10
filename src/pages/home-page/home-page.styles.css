@@ -17,15 +17,15 @@
 }
 
 .text-container {
-  width: 60%;
+  width: 55%;
   height: 10vh;
   display: flex;
   align-items: flex-end;
 }
 
 .image-container {
-  width: 40%;
-  height: 60vh;
+  width: 45%;
+  height: 40vh;
 }
 
 .hero-illustration {
@@ -33,6 +33,5 @@
 }
 
 .title {
-  font-size: 72px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }

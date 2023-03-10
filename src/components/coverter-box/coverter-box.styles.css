@@ -1,9 +1,18 @@
 .converter-box {
   background-color: white;
-  width: 80%;
+  width: 48%;
   height: 260px;
   position: absolute;
   top: 480px;
-  padding: 40px 20px 40px 20px;
-  border-radius: 60px;
+  padding: 30px 40px 30px 40px;
+  border-radius: 42px;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 1px 7px -5px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0px 1px 7px -5px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 1px 7px -5px rgba(0, 0, 0, 0.34);
+}
+
+.valute-select-box {
+  margin-bottom: 24px;
 }
