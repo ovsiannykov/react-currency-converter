@@ -1,0 +1,38 @@
+.hero {
+  background: rgb(78, 193, 253);
+  background: linear-gradient(
+    146deg,
+    rgba(78, 193, 253, 1) 0%,
+    rgba(244, 244, 247, 1) 100%
+  );
+}
+
+.hero-container {
+  min-width: 100vw;
+  height: 100vh;
+  padding: 20px 50px 20px;
+  display: flex;
+  flex-diraction: row;
+  align-items: center;
+}
+
+.text-container {
+  width: 60%;
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.image-container {
+  width: 40%;
+  height: 60vh;
+}
+
+.hero-illustration {
+  margin-top: -120px;
+}
+
+.title {
+  font-size: 72px;
+  margin-bottom: 12px;
+}

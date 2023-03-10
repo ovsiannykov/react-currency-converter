@@ -1,0 +1,9 @@
+.converter-box {
+  background-color: white;
+  width: 80%;
+  height: 260px;
+  position: absolute;
+  top: 480px;
+  padding: 40px 20px 40px 20px;
+  border-radius: 60px;
+}
