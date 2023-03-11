@@ -27,7 +27,7 @@ function ConverterBox() {
       const seccondRate = getRateFromCurrancyName(seccundaryCurrencyName);
 
       console.log(num, firstRate, seccondRate);
-      const result = (num / firstRate) * seccondRate;
+      const result = (num * firstRate) / seccondRate;
 
       setSeccundaryValue(result);
     },
@@ -42,7 +42,7 @@ function ConverterBox() {
       const seccondRate = getRateFromCurrancyName(seccundaryCurrencyName);
 
       console.log(num, firstRate, seccondRate);
-      const result = (num / firstRate) * seccondRate;
+      const result = (num * seccondRate) / firstRate;
 
       setFirstValue(result);
     },
