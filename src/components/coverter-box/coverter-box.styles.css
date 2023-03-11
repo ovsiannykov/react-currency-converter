@@ -6,14 +6,10 @@
   /* position: absolute;
   top: 480px; */
   padding: 30px 40px 30px 40px;
-  border-radius: 42px;
+  border-radius: 16px;
   display: flex;
   justify-content: space-between;
   -webkit-box-shadow: 0px 1px 7px -5px rgba(0, 0, 0, 0.34);
   -moz-box-shadow: 0px 1px 7px -5px rgba(0, 0, 0, 0.34);
   box-shadow: 0px 1px 7px -5px rgba(0, 0, 0, 0.34);
-}
-
-.valute-select-box {
-  margin-bottom: 24px;
 }

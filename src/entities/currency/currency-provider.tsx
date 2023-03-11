@@ -18,6 +18,7 @@ export class CurrenciesProvider extends React.Component<Props, State> {
         currencies: [],
         getCurrencies: this.getCurrencies,
         isLoading: false,
+        usd: 0,
       },
     };
   }
@@ -29,7 +30,6 @@ export class CurrenciesProvider extends React.Component<Props, State> {
 
     try {
       const res = await axios.get(BASE_URL);
-
       const cuurenciesArr = res.data;
 
       const UAH = {
@@ -43,8 +43,16 @@ export class CurrenciesProvider extends React.Component<Props, State> {
       await cuurenciesArr.unshift(UAH);
 
       if (res.status === 200) {
-        this.setState((prev) => ({
+        await this.setState((prev) => ({
           context: { ...prev.context, currencies: cuurenciesArr },
+        }));
+
+        const usdArr = this.state.context.currencies.filter(
+          (el) => el.cc === "USD"
+        );
+
+        this.setState((prev) => ({
+          context: { ...prev.context, usd: usdArr[0]?.rate },
         }));
       }
     } catch (error) {

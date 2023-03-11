@@ -12,6 +12,7 @@ export type CurrenciesContext = {
   currencies: Valute[];
   getCurrencies: InstanceType<typeof CurrenciesProvider>["getCurrencies"];
   isLoading: boolean;
+  usd: number;
 };
 
 export type Props = {
