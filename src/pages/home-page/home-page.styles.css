@@ -39,6 +39,27 @@
   transition: transform 0.2s;
 }
 
-.title {
-  margin-left: 10px;
+.home-title {
+  color: white;
+  text-transform: uppercase;
+}
+
+.converter-title {
+  font-size: 42px;
+  line-height: 56px;
+}
+
+.currency-subtitle {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+  .image-container {
+    display: none;
+  }
+
+  .text-container {
+    width: 100%;
+  }
 }

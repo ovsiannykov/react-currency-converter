@@ -10,11 +10,9 @@ function HomePage() {
       <section className="hero">
         <div className="hero-container">
           <div className="text-container">
-            <h1 className="font-extrabold text-white text-6xl title uppercase">
+            <h1 className="converter-title home-title title">
               Конвертер <br />
-              <span className="font-extrabold text-white text-8xl uppercase">
-                Валют 🇺🇦
-              </span>
+              <span className="currency-subtitle home-title">Валют 🇺🇦</span>
             </h1>
             <ConverterBox />
           </div>

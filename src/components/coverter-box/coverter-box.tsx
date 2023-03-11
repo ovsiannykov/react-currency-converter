@@ -22,13 +22,9 @@ function ConverterBox() {
   const fistValueHandler = useCallback(
     (num: number) => {
       setFirstValue(num);
-
       const firstRate = getRateFromCurrancyName(fistCurrencyName);
       const seccondRate = getRateFromCurrancyName(seccundaryCurrencyName);
-
-      console.log(num, firstRate, seccondRate);
       const result = (num * firstRate) / seccondRate;
-
       setSeccundaryValue(result);
     },
     [fistCurrencyName, getRateFromCurrancyName, seccundaryCurrencyName]
@@ -37,13 +33,9 @@ function ConverterBox() {
   const seccondValueHandler = useCallback(
     (num: number) => {
       setSeccundaryValue(num);
-
       const firstRate = getRateFromCurrancyName(fistCurrencyName);
       const seccondRate = getRateFromCurrancyName(seccundaryCurrencyName);
-
-      console.log(num, firstRate, seccondRate);
       const result = (num * seccondRate) / firstRate;
-
       setFirstValue(result);
     },
     [fistCurrencyName, getRateFromCurrancyName, seccundaryCurrencyName]
