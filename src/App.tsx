@@ -4,15 +4,16 @@ import {
   useCurrenciesContext,
 } from "./entities/currency/currency-provider";
 import HomePage from "./pages/home-page/home-page";
+import LoadingPage from "./pages/loading-page/loading-page";
 
 function App() {
-  const { getCurrencies } = useCurrenciesContext();
+  const { getCurrencies, isLoading } = useCurrenciesContext();
 
   useEffect(() => {
     getCurrencies();
   }, [getCurrencies]);
 
-  return <HomePage />;
+  return isLoading ? <LoadingPage /> : <HomePage />;
 }
 
 function Index() {
