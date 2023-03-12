@@ -15,38 +15,38 @@ function ConverterBox() {
   );
 
   const [firstValue, setFirstValue] = useState(1);
-  const [seccundaryValue, setSeccundaryValue] = useState(usd);
-  const [fistCurrencyName, setFirstCurrencyName] = useState("UAH");
+  const [seccundaryValue, setSeccundaryValue] = useState(firstValue * usd);
+  const [firstCurrencyName, setFirstCurrencyName] = useState("UAH");
   const [seccundaryCurrencyName, setSeccundaryCurrencyName] = useState("USD");
 
-  const fistValueHandler = useCallback(
+  const firstValueHandler = useCallback(
     (num: number) => {
       setFirstValue(num);
-      const firstRate = getRateFromCurrancyName(fistCurrencyName);
+      const firstRate = getRateFromCurrancyName(firstCurrencyName);
       const seccondRate = getRateFromCurrancyName(seccundaryCurrencyName);
       const result = (num * firstRate) / seccondRate;
       setSeccundaryValue(result);
     },
-    [fistCurrencyName, getRateFromCurrancyName, seccundaryCurrencyName]
+    [firstCurrencyName, getRateFromCurrancyName, seccundaryCurrencyName]
   );
 
   const seccondValueHandler = useCallback(
     (num: number) => {
       setSeccundaryValue(num);
-      const firstRate = getRateFromCurrancyName(fistCurrencyName);
+      const firstRate = getRateFromCurrancyName(firstCurrencyName);
       const seccondRate = getRateFromCurrancyName(seccundaryCurrencyName);
       const result = (num * seccondRate) / firstRate;
       setFirstValue(result);
     },
-    [fistCurrencyName, getRateFromCurrancyName, seccundaryCurrencyName]
+    [firstCurrencyName, getRateFromCurrancyName, seccundaryCurrencyName]
   );
 
   return (
     <div className="converter-box">
       <CurrencyInputsItem
         value={firstValue}
-        setValue={fistValueHandler}
-        currencyName={fistCurrencyName}
+        setValue={firstValueHandler}
+        currencyName={firstCurrencyName}
         setCurrencyName={setFirstCurrencyName}
       />
       <CurrencyInputsItem

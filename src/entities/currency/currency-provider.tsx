@@ -6,6 +6,14 @@ import { CurrenciesContext, Props, State } from "./types";
 const BASE_URL =
   "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
 
+const UAH = {
+  r030: 999,
+  txt: "Українська гривня",
+  rate: 1,
+  cc: "UAH",
+  exchangedate: format(new Date(), "dd.MM.yyyy"),
+};
+
 export const currenciesContext = React.createContext<CurrenciesContext>(
   undefined!
 );
@@ -30,21 +38,12 @@ export class CurrenciesProvider extends React.Component<Props, State> {
 
     try {
       const res = await axios.get(BASE_URL);
-      const cuurenciesArr = res.data;
-
-      const UAH = {
-        r030: 999,
-        txt: "Українська гривня",
-        rate: 1,
-        cc: "UAH",
-        exchangedate: format(new Date(), "dd.MM.yyyy"),
-      };
-
-      await cuurenciesArr.unshift(UAH);
+      const currenciesArr = res.data;
+      await currenciesArr.unshift(UAH);
 
       if (res.status === 200) {
         await this.setState((prev) => ({
-          context: { ...prev.context, currencies: cuurenciesArr },
+          context: { ...prev.context, currencies: currenciesArr },
         }));
 
         const usdArr = this.state.context.currencies.filter(
@@ -57,7 +56,6 @@ export class CurrenciesProvider extends React.Component<Props, State> {
       }
     } catch (error) {
       console.log(error);
-
       window.alert("Щось пiшло не так... Спробуйте оновити сторінку");
     } finally {
       this.setState((prev) => ({
